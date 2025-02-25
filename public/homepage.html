@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InteriorSathi</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+            background-image:url("image1.jpg");
+            background-size: cover;          /* Make the image cover the entire screen */
+            background-position: center;     /* Center the image */
+            background-repeat: no-repeat;    /* Prevent the image from repeating */
+        }
+
+        /* Header Styles */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background-color: #f0ead6cc; 
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .brand {
+            text-align: left;
+        }
+
+        .brand h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #dd8304;
+        }
+
+        .brand p {
+            margin: 5px 0 0;
+            font-size: 15px;
+            color: #666;
+        }
+
+        .nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .nav a:hover {
+            color: #4f18e4;
+        }
+        .nav a:last-child {
+            margin-right: 30px; /* Added margin to the right */
+        }
+
+        /* Centered Portal Styles */
+        .portal {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative; /* Ensure the overlay appears on top of the portal */
+        }
+
+        /* Transparent layer covering only the portal buttons */
+        .portal-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Center the overlay */
+            background: #f0ead680;
+            width: 400px; /* Width of the area covering both buttons */
+            height: 350px; /* Height to cover the buttons */
+            z-index: 1; /* Place the overlay above the background */
+            border-radius: 15px; /* Optional: rounded corners */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 0px; /* Add padding to control the gap from the top */
+        }
+
+        .overlay-image {
+            width: 300px;   /* Adjust image width */
+            height: 300px;   /* Maintain aspect ratio */
+            position: relative;
+            top: -40px;      /* Move image 20px down */
+          
+        }
+
+        .portal-buttons {
+            text-align: center;
+            z-index: 2; /* Ensure buttons appear above the overlay */
+            position: absolute; /* Keep position relative to .portal container */
+            top: 450px; /* Move buttons below the overlay */
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%); /* Horizontal centering */
+        }
+
+        .portal-buttons button {
+            padding: 13px 20px;
+            margin: 15px;
+            font-size: 18px;
+            color: #333;
+            background-color: #eb9115;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+        }
+
+        .portal-buttons button:hover {
+            background-color: #de8406;
+        }
+
+        /* About Us Section Styles */
+        .about-us {
+            padding: 30px 20px;
+            background-color: rgba(240, 234, 214, 0.8);
+            text-align: center;
+        }
+
+        .about-us h2 {
+            font-size: 30px;
+            color: #333;
+        }
+
+        .about-us p {
+            font-size: 16px;
+            color: #666;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <div class="header">
+        <div class="brand">
+            <h1>InteriorSathi</h1>
+            <p>Bridging Designers and Homeowners.</p>
+        </div>
+        <div class="nav">
+            <a href="#">Home</a>
+            <a href="#about-us">About Us</a>
+        </div>
+    </div>
+
+    <!-- Centered Portal Section -->
+    <div class="portal">
+        <div class="portal-overlay"></div> <!-- Transparent overlay covering only the buttons -->
+        <div class="portal-buttons">
+            <button onclick="goToDesigner()" role='designer'>I'm a Designer</button>
+            <button onclick="goToHomeowner()" role='homeowner'>I'm a Homeowner</button>
+        </div>
+    </div>
+
+    <!-- Overlay Image -->
+    <div class="portal-overlay">
+        <img src="logo.png" alt="Overlay Image" class="overlay-image">
+    </div>
+    
+    <!-- About Us Section -->
+    <div id="about-us" class="about-us">
+        <h2>About Us</h2>
+        <p>
+            Welcome to InteriorSathi — Your Partner in Creating Dream Spaces<br>At InteriorSathi, we believe that transforming a house into a home should be a seamless, inspiring, and collaborative journey. Our platform is designed to bridge the gap between talented interior designers and homeowners looking to bring their visions to life.
+        </p>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        function goToDesigner() {
+            window.location.href = "/auth/google?role=designer";  
+        }
+    
+        function goToHomeowner() {
+            window.location.href = "homeownerprofile.html";  
+        }
+    </script>
+
+    <!-- Smooth Scroll for About Us link -->
+    <script>
+        document.querySelector('a[href="#about-us"]').addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+        
+    </script>
+</body>
+</html>

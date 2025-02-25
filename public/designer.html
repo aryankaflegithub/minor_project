@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Designer Profile</title>
+  <link rel="stylesheet" href="designer.css">
+</head>
+<body>
+  <script>
+    fetch('/user-data')
+      .then(response => response.json())
+      .then(data => {
+        if (data.error) {
+          window.location.href = "/"; // Redirect to login if not authenticated
+        } else {
+          document.getElementById('username').textContent = data.name;
+          document.getElementById('email').textContent = data.email;
+        }
+      })
+      .catch(error => console.error('Error fetching user data:', error));
+  </script>
+
+  <!-- Header Section -->
+  <div class="header">
+    <div class="brand">
+      <h1>InteriorSathi</h1>
+      <p>Bridging Designers and Homeowners.</p>
+    </div>
+    <div class="nav">
+      <a href="#">Home</a>
+      <a href="#" id="edit-profile">Edit Profile</a>
+    </div>
+  </div>
+
+  <!-- Profile Section -->
+  <div class="profile-section">
+    <input type="file" id="upload-photo" accept="image/*" hidden>
+    <div class="profile-photo" onclick="document.getElementById('upload-photo').click();">
+      <img id="profile-img" src="default-profile.png" alt="Profile Photo">
+    </div>
+    <div class="profile-description">
+      <h2 id="profile-name"><span id="username">data.name</span></h2>
+      <p id="profile-bio">Your description...</p>
+    </div>
+  </div>
+
+  <!-- Edit Profile Modal -->
+  <div id="edit-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Edit Profile</h2>
+      <input type="text" id="edit-name" placeholder="Enter your name">
+      <textarea id="edit-bio" placeholder="Enter a short bio"></textarea>
+      <button id="save-profile">Save</button>
+    </div>
+  </div>
+
+  <!-- Image Generation Section -->
+  <div class="image-generation">
+    <h3>Generate Image</h3>
+    <input type="text" id="prompt" placeholder="Enter text prompt">
+    <button onclick="generateImage()">Generate</button>
+    <div id="generated-image">
+      <img src="generated_image.png" alt="img">
+    </div>
+  </div>
+
+  <!-- Upload Work Section -->
+  <div class="upload-work">
+    <input type="file" id="file-input" accept="image/*" multiple hidden>
+    <div class="upload-icon" onclick="document.getElementById('file-input').click();">+</div>
+    <p>Upload Work</p>
+  </div>
+
+  <!-- Work Gallery -->
+  <div class="work-gallery">
+    <h3>My Uploads</h3>
+    <div class="gallery" id="gallery"></div>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox-modal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modal-image">
+  </div>
+
+  <script src="designer.js"></script>
+</body>
+</html>

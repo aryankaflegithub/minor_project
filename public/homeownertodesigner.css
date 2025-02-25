@@ -1,0 +1,179 @@
+/* General Styles */
+body {
+  font-family: 'Arial', 'sans-serif';
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  padding-top: 60px; /* Add padding to the top of the body to prevent content from being hidden behind the fixed navbar */
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: hsla(46, 46%, 89%, 0.8);
+  position: fixed; /* Change from sticky to fixed */
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  z-index: 1000;
+
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 100px;
+  width: 100px;
+  margin-right: 10px;
+}
+
+.brand {
+  text-align: left;
+  margin-right: auto;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 24px;
+  color: #dd8304;
+}
+
+.brand p {
+  font-size: 15px;
+  color: #666;
+  display: inline;
+}
+
+.nav-links a {
+  color: black;
+  text-decoration: none;
+  margin-left: 20px;
+  color: #333;
+  font-size: 16px;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+  color: #4f18e4;
+}
+
+/* Profile Section */
+.profile-container {
+  display: flex;
+  margin: 50px;
+}
+
+.profile {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.profile-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  align-items: center;
+}
+
+.profile-name {
+  margin-top: 10px;
+  margin-left: 45px;
+  align-items: center;
+}
+
+/* Sidebar */
+.sidebar {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  margin-left: 20px;
+  bottom: 0;
+}
+
+.rating-section {
+  margin-top: 20px;
+}
+
+.stars {
+  margin-top: -20px;
+  display: flex;
+  gap: 3px;
+}
+
+.star {
+  font-size: 40px;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.star.active {
+  color: #ffcc00;
+}
+
+/* Message Box */
+.message-box {
+  margin-left: 60px;
+  /* margin-bottom: 20px;  */
+margin-top:-25px;
+margin-left:80px;
+}
+
+#message-button {
+  padding: 15px 40px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  
+}
+
+/* Created Line Styles */
+.created-line {
+  text-align: center;
+  
+  margin-bottom: 10px;
+  margin-top:10px
+}
+
+.created-line hr {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.created-line span {
+  display: inline-block;
+  background-color: white;
+  padding: 0 10px;
+  position: relative;
+  top: -12px;
+}
+
+/* Photo Gallery Styles */
+.photo-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 20px;
+  justify-content: center;
+}
+
+.photo-gallery img {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+#message-button:hover {
+  background-color: #0056b3;
+}

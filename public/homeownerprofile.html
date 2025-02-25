@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homeowner Page</title>
+    <link rel="stylesheet" href="homeownerprofile.css">
+</head>
+<body>
+    <!-- Navbar -->
+    
+        <div class="navbar">
+          <div class="logo">
+            <img src="logo.png" alt="Logo" class="logo">
+            <!-- <span class="brand-name">DesignerHub</span> -->
+          </div>
+           <div class="brand">
+            <h1>InteriorSathi</h1>
+            <p>Bridging Designers and Homeowners.</p>
+          </div>
+          <nav>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Edit</a></li>
+            </ul>
+            <img src="IMG-20241221-WA0014.jpg" alt="Profile Photo" class="profile-photo">
+          </nav>
+        </div>
+
+    <!-- Image Generator -->
+    <div class="image-generator">
+        <h2>Generate Image</h2>
+        <input type="text" id="text-prompt" placeholder="Enter a text prompt...">
+        <button onclick="generateImage()">Generate  </button>
+        <div id="generated-image"></div>
+    </div>
+        <section class="for-you">
+            <h2>For You</h2>
+            <div class="filter">
+              <button onclick="toggleFilter()">Filter</button>
+              <div id="filter-options" class="filter-options">
+                <label for="price-range">Rate:</label>
+                <input type="range" id="price-range" min="0" max="1000" value="500">
+                <!-- <label for="category">Theme:</label> -->
+                <!-- <select id="category">
+                  <option value="all">All</option>
+                  <option value="graphic">Minimalistic</option>
+                  <option value="illustration">Traditional</option>
+                  <option value="photography">Bohemian</option>
+                </select> -->
+              </div>
+            </div>
+            <div class="gallery">
+
+    <!-- Posts Section -->
+    <div class="posts">
+      <div class="post">
+          <img src="pexels-dtanpt-1329711.jpg" alt="Design 1" class="post-image">
+          <div class="designer-info">
+              <a href="aagyaprofile.html" class="profile-icon">
+                  <img src="aagya.JPG" alt="Designer 1">
+              </a>
+              <a href="aagyaprofile.html" class="designer-name">Aagya Khati</a>
+          </div>
+      </div>
+      
+      <div class="post">
+          <img src="pexels-marywhitneyph-90319.jpg" alt="Design 2" class="post-image">
+          <div class="designer-info">
+              <a href="ajitaprofile.html" class="profile-icon">
+                  <img src="ajita.JPG" alt="Designer 2">
+              </a>
+              <a href="ajitaprofile.html" class="designer-name">Ajita Kharel</a>
+          </div>
+      </div>
+
+
+      <div class="post">
+          <img src="pexels-zvolskiy-2082087.jpg" alt="Design 2" class="post-image">
+          <div class="designer-info">
+              <a href="alishaprofile.html" class="profile-icon">
+                  <img src="alisha.jpg" alt="Designer 2">
+              </a>
+              <a href="alishaprofile.html" class="designer-name">Alisha Shah</a>
+          </div>
+      </div>
+
+      <div class="post">
+        <img src="pexels-pixabay-262048.jpg" alt="Design 2" class="post-image">
+        <div class="designer-info">
+            <a href="aryanprofile.html" class="profile-icon">
+                <img src="aryan.jpg" alt="Designer 2">
+            </a>
+            <a href="aryanprofile.html" class="designer-name">Aryan Kafle</a>
+         </div>
+      </div>
+    </div>
+
+
+    <script src="homeownerprofile.js"></script>
+</body>
+</html>
